@@ -1,0 +1,44 @@
+//1. Write a code to create a linked list containing five nodes and display the values. 
+                                                //   Nodes are: p = 7 q = 5 r = 13 s = 10 t = 11
+//Solution 1: 
+#include<stdio.h>
+#include<stdlib.h>
+struct node{
+int data;
+struct node* next;
+           };
+int main()   {
+struct node* head =NULL;
+struct node* p =NULL;
+struct node* q =NULL;
+struct node* r =NULL;
+struct node* s =NULL;
+struct node* t =NULL;
+p=malloc(sizeof(struct node));
+q=malloc(sizeof(struct node));
+r=malloc(sizeof(struct node));
+s=malloc(sizeof(struct node));
+t=malloc(sizeof(struct node));
+p->data=7;
+q->data=5;
+r->data=13;
+s->data=10;
+t->data=11;
+head=p;
+p->next=q;
+q->next=r;
+r->next=s;
+s->next=t;
+t->next=NULL;
+ struct node* temp=head;
+ printf("The numbers are:\n");
+ while(temp!=NULL){
+ printf("%d -> ",temp->data);
+ if(temp->next->next==NULL){
+ temp=temp->next;
+ printf("%d\n",temp->data);
+                            }
+temp=temp->next;
+                  }
+return 0;
+}
