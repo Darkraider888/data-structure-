@@ -1,0 +1,44 @@
+//3. Now update the same code in such a way so that user can define how many nodes he orshe wants to create then input the values in nodes.
+
+//Solution 3:
+#include<stdio.h>
+#include<stdlib.h>
+struct node{
+int data;
+struct node* next;
+           };
+int main()
+{
+printf("Enter the number of values:\n");
+int n;
+scanf("%d",&n);
+struct node* head =NULL;
+struct node* tmp =NULL;
+struct node* newnode =NULL;
+head=NULL;
+printf("Enter the numbers:\n");
+for(int i=0;i<=n;i++){
+   if(i==n){
+     tmp->next=NULL;
+break;
+}
+newnode=malloc(sizeof(struct node));
+  scanf("%d",&newnode->data);
+  if(head==NULL){
+ tmp=newnode;
+ head=tmp;
+}else{
+tmp->next=newnode;
+tmp=newnode;
+}
+}
+struct node* temp=head;
+printf("The numbers are:\n");
+while(temp!=NULL){
+printf("%d -> ",temp->data);
+if(temp->next->next==NULL){
+temp=temp->next;
+printf("%d\n",temp->data);
+}
+temp=temp->next;
+} return 0; }
