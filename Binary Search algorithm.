@@ -1,0 +1,47 @@
+//2. Consider the following unsorted array  
+  //                7 3 4 2 9 21 15 23 
+//i) Write a code to search the value 23 following 
+//ii) Display the changes of the value of mid-point for each iteration. 
+//Example Output: Iteration 1, Mid = 3
+//Solution 2: 
+#include<stdio.h>
+int main(){
+int arr[]={7,3,4,2,9,21,15,23};
+printf(" 7,3,4,2,9,21,15,23 \n");
+int n=sizeof(arr)/sizeof(arr[0]);
+for(int i=0;i<n-1;i++){              //sorted array
+for(int j=i+1;j<n;j++){
+if(arr[j]<arr[i]){
+int tmp=arr[j];
+arr[j]=arr[i];
+arr[i]=tmp;   } } }
+printf("The sorted array is:\n");
+for(int i=0;i<n;i++){
+printf("%d\t",arr[i]); }
+printf("\n\nEnter the number you want to find:\n");
+int X;
+scanf("%d",&X);           //Binary Search algorithm
+printf("\n");
+int START=0;
+int end=n-1;
+int mid=(START+end)/2;
+int count=0;
+while(START<=end){
+count++;
+printf("Iteration %d: START=%d, End=%d, Mid =%d\n",count,START+1,end+1,mid+1);
+if(X<arr[mid]){
+end=mid-1; }
+else{
+START=mid+1; }
+mid=(START+end)/2; }
+count++;
+printf("Iteration %d: START=%d, End=%d, Mid=%d\n",count,START+1,end+1,mid+1);
+if(arr[mid]==X){
+printf("\n%d is found at position %d\n",X,mid+1);
+}   
+else
+{
+printf("Not found\n");
+}
+return 0;
+}
