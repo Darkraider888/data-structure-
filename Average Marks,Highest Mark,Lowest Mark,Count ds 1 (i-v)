@@ -10,7 +10,11 @@ Write a program to input the marks of n students and find the lowest mark obtain
 the test. 
 iv) Count Students with Marks Above Average: 
 Write a program to input the marks of n students and calculate the average marks. 
-Then, count how many students scored marks above the average. */
+Then, count how many students scored marks above the average.
+v) Calculate Grade Distribution: 
+Extend the previous program to categorize students' marks into different grade 
+bands: A (90-100), B (80-89), C (70-79), D (60-69), and F (below 60). 
+Output the count of students in each grade band. */
 
 #include<stdio.h> 
 int main() 
