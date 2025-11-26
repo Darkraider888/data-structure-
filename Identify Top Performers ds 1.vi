@@ -1,0 +1,41 @@
+/*1. A teacher is inputting the marks of his students for a Mathematics test. The marks range 
+from 0 to 100.
+Identify Top Performers: (Bonus Marks) 
+Write a program to input the marks of n students and identify the top performers. 
+Consider the top 10% of students based on their marks as top performers. 
+*/
+#include<stdio.h> 
+int main() 
+{ 
+int n;                                 
+//students number from user 
+printf("Enter the number of students:"); 
+scanf("%d",&n); 
+int arr[n];                        
+//the marks from user 
+printf("Enter the numbers:\n"); 
+for(int i=0;i<n;i++) 
+{ 
+scanf("%d",&arr[i]); 
+} 
+for(int i=0;i<n-1;i++)      
+//Top Performers code 
+{ 
+for(int j=i+1;j<n;j++) 
+{ 
+if(arr[j]>arr[i]) 
+{ 
+int tmp=arr[j]; 
+arr[j]=arr[i]; 
+arr[i]=tmp; 
+} 
+} 
+} 
+f
+ loat x=(0.1)*n; 
+printf("The top 10 percent of numbers are:\n"); 
+for(int i=0;i<x;i++){ 
+printf("%d\n",arr[i]); 
+} 
+return 0; 
+} 
