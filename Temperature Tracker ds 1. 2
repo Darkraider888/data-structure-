@@ -1,0 +1,29 @@
+/* 
+Temperature Tracker: 
+You are developing a program to track the temperature of a room over a week. Write a C 
+program that uses an array to store the temperature readings for each day. The program 
+should allow the user to input the temperature readings for each day and display the highest 
+and lowest temperatures recorded during the week. */
+#include<stdio.h> 
+int main(){ 
+double arr[7];                       
+//the temperature readings for each day,user input 
+printf("Enter the temperature recorded each day of this week:\n"); 
+for(int i=0;i<7;i++){ 
+scanf("%lf",&arr[i]); 
+} 
+double max=arr[0];            
+double min=arr[0]; 
+for(int i=0;i<7;i++){ 
+if(arr[i]>max){ 
+ //the highest and lowest temperatures 
+max=arr[i]; 
+}if (arr[i]<min){ 
+min=arr[i]; 
+} 
+} 
+printf("\n"); 
+printf("The maximum temperatures recorded during the week was %.0f degree celsius\n",max); 
+printf("The lowest temperatures recorded during the week was %.0f degree celsius\n",min); 
+return 0; 
+}
